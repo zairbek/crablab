@@ -1,0 +1,247 @@
+/* Tablets (вертикальная и горизонтальная) ----------- */
+@media only screen and (max-width: 1024px) {
+
+  body{
+    position: relative;
+  }
+
+  // ========= INTRO
+  .intro{
+
+    &-wrapper{
+      
+      h1{
+        margin-bottom: 20px;
+        font-size: 2em;
+      } 
+
+      p i{
+        font-size: 1em;
+      }
+    }
+
+
+  }
+  // ========= end of INTRO
+
+
+
+  .header{
+    width: 100%;
+
+
+    &-nav{
+
+      &__menu{
+        display: flex;
+        
+        background: transparent;
+        cursor: pointer;
+        margin: 0 10px;
+        
+        &:focus{
+          outline: none;
+        }
+        >i{
+          font-size: 1.2em;
+          color: #000;
+        }
+      
+      }
+
+      &__items{
+        display: none;
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .menu{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -41%;
+    bottom: 0;
+    z-index: 10;
+    width: 40%;
+
+
+    box-shadow: 5px 0 10px rgba(126, 126, 126, 0.788);
+    background: rgb(234, 252, 252);
+
+    &__button_close{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 40px;
+
+      cursor: pointer;
+      background: transparent;
+      border-left: 1px solid black;
+
+      &:focus{
+        outline: none;
+      }
+
+      >i{
+        font-size: 1.2em;
+      }
+    }
+
+
+    &__items{
+      margin: 30px 40px 30px 20px;
+      
+      >li{
+        width: 100%;
+        padding: 5px 0;
+        
+        &:hover{
+          background: rgba(0, 0, 0, 0.096);
+        }
+        a{
+
+          
+        }
+      }
+    }
+  }
+}
+
+
+/* Smartphones (вертикальная и горизонтальная ориентация) ----------- */
+@media only screen and (max-width : 480px) {
+
+  // ========= INTRO
+  .intro{
+
+    &-wrapper{
+      
+      h1{
+        margin-bottom: 20px;
+        font-size: 2em;
+      } 
+
+      p i{
+        font-size: 1em;
+      }
+    }
+
+
+  }
+  // ========= end of INTRO
+
+  
+  .header{
+    width: 100%;
+
+
+    &-nav{
+
+      &__menu{
+        display: flex;
+        
+        background: transparent;
+        cursor: pointer;
+        margin: 0 10px;
+        
+        &:focus{
+          outline: none;
+        }
+        >i{
+          font-size: 1.2em;
+          color: #000;
+        }
+      
+      }
+
+      &__items{
+        display: none;
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .menu{
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -71%;
+    z-index: 10;
+    width: 70%;
+
+
+    box-shadow: 5px 0 10px rgba(126, 126, 126, 0.788);
+    background: rgb(234, 252, 252);
+
+    &__button_close{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 40px;
+
+      cursor: pointer;
+      background: transparent;
+      border-left: 1px solid black;
+
+      &:focus{
+        outline: none;
+      }
+
+      >i{
+        font-size: 1.2em;
+      }
+    }
+
+
+    &__items{
+      margin: 30px 40px 30px 20px;
+      
+      >li{
+        width: 100%;
+        padding: 5px 0;
+        
+        &:hover{
+          background: rgba(0, 0, 0, 0.096);
+        }
+        a{
+
+          
+        }
+      }
+    }
+  }
+}
