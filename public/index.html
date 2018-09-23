@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <title>CrabLab</title>
 </head>
 <body>
@@ -16,9 +17,9 @@
     <div class="intro" id="intro">
       <div class="intro-header">
         <ul class="intro-header__socials">
-          <li><i class="fab fa-twitter"></i></li>
-          <li><i class="fab fa-facebook"></i></li>
-          <li><i class="fas fa-phone"></i></li>
+          <li><a href=""><i class="fab fa-twitter"></i></a></li>
+          <li><a href=""><i class="fab fa-facebook"></i></a></li>
+          <li><a href="tel:+79772620626"><i class="fas fa-phone"></i></a></li>
         </ul>
       </div>
 
@@ -29,7 +30,8 @@
 
       <div class="intro-footer">
         <button id="intro-footer__arrow" 
-                class="intro-footer__arrow"
+                class="intro-footer__arrow
+                       animated infinite bounce delay-5s"
                 data-scroll-to-elem-id="header"
                 data-scroll-speed="">
         
@@ -62,9 +64,9 @@
 
       <div class="header-contact">
         <ul class="header-contact__socials">
-          <li><i class="fab fa-twitter"></i></li>
-          <li><i class="fab fa-facebook"></i></li>
-          <li><i class="fas fa-phone"></i></li>
+          <li><a href=""><i class="fab fa-twitter"></i></a></li>
+          <li><a href=""><i class="fab fa-facebook"></i></a></li>
+          <li><a href="tel:+79772620626"><i class="fas fa-phone"></i></a></li>
         </ul>
       </div>
 
@@ -98,8 +100,11 @@
 
   </div>
 
-  <nav class="menu" id="menu">
-      <button class="menu__button_close">
+  <nav class="menu" 
+       id="menu"
+       data-el-close="menu__button_close">
+      
+       <button class="menu__button_close" id="menu__button_close">
           <i class="fas fa-arrow-left"></i>
       </button>
 

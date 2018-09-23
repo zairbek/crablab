@@ -70,10 +70,12 @@ body{
     
       >li{
         margin:0 10px;
+        >a{
 
-        >i{
-          font-size: 1.4em;
-          color: $intro-footer__socials__color;
+          >i{
+            font-size: 1.4em;
+            color: $intro-footer__socials__color;
+          }
         }
       }
     }
@@ -113,7 +115,7 @@ body{
       border-radius: 50%;
       background: transparent;
       cursor: pointer;
-      animation: jumping-arrow 2s linear infinite;
+      // animation: jumping-arrow 2s linear infinite;
       
       &:focus{
         outline: none;
@@ -189,10 +191,11 @@ body{
     
       >li{
         margin:0 10px;
-
-        >i{
-          font-size: 1.2em;
-          color: #000;
+        >a{
+          >i{
+            font-size: 1.2em;
+            color: #000;
+          }
         }
       }
     }
