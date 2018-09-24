@@ -4,6 +4,18 @@ function init(){
   stretchBlock(getId("intro"));
   getId("intro-footer__arrow").addEventListener('click', scrollToElem);
   getId("header-nav__menu").addEventListener('click', swipeMenu);
+
+  // ==================================================
+  var a = document.querySelectorAll("a[class=phone-number]");
+  a.forEach(function(item){
+    item.onclick = function(){
+      alert(11);
+    }
+  })
+  // ==================================================
+  
+  
+  
 }
 
 
@@ -17,12 +29,37 @@ window.onresize = function(){
 function stretchBlock(attr){
   let h = window.innerHeight;
   attr.style.height = h + "px";
-}
+};
+
+(function(){
+  // функция для изменение темы браузера
+  var el = [], s, h = window.innerHeight;
+  el[0] = document.querySelector("meta[name=theme-color]");
+  el[1] = document.querySelector("meta[name=msapplication-navbutton-color]");
+  el[2] = document.querySelector("meta[name=apple-mobile-web-app-status-bar-style]");
+  
+  window.addEventListener('scroll', function(){
+    s = window.pageYOffset || document.documentElement.scrollTop;
+  
+    if(h <= s){
+      el[0].setAttribute('content', '#52cca8');
+      el[1].setAttribute('content', '#52cca8');
+      el[2].setAttribute('content', '#52cca8');
+    }else{
+      el[0].setAttribute('content', '#582b2b');
+      el[1].setAttribute('content', '#582b2b');
+      el[2].setAttribute('content', '#582b2b');
+    }
+  })
+}).call(this)
+
 // FINISHED========
 
 
 // ===================================================================
-(function(){
+function typeDevice (){
+  // функция для определение девайса
+  // Возвращаеть "desktop" - "mobile"
   window.device = {};
 
   var _user_agent = window.navigator.userAgent.toLowerCase();
@@ -43,27 +80,12 @@ function stretchBlock(attr){
     }
   }
 
+  if(desktop())
+    return "desktop";
+  if(mobile())
+    return "mobile";
+};
 
-  
-  // if(desktop())
-  //   alert("desktop")
-  // if(mobile())
-  //   alert("mobile")
-
-
-}).call(this);
-
-
-window.onscroll = function(){
-  var el = document.querySelector("meta[name=theme-color]");
-  var h = window.innerHeight;
-  var s = window.pageYOffset || document.documentElement.scrollTop;
-
-  if(h <= s)
-    el.setAttribute('content', '#52cca8');
-  else
-    el.setAttribute('content', '#582b2b');
-}
 
 // =====================================================================================
 
