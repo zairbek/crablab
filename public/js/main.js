@@ -3,7 +3,7 @@ window.addEventListener("load", init)
 function init(){
   stretchBlock(getId("intro"));
   getId("intro-footer__arrow").addEventListener('click', scrollToElem);
-  getId("header-nav__menu").addEventListener('click', swipeMenu)
+  getId("header-nav__menu").addEventListener('click', swipeMenu);
 }
 
 
@@ -53,6 +53,18 @@ function stretchBlock(attr){
 
 }).call(this);
 
+
+window.onscroll = function(){
+  var el = document.querySelector("meta[name=theme-color]");
+  var h = window.innerHeight;
+  var s = window.pageYOffset || document.documentElement.scrollTop;
+
+  if(h <= s)
+    el.setAttribute('content', '#52cca8');
+  else
+    el.setAttribute('content', '#582b2b');
+}
+
 // =====================================================================================
 
 
@@ -69,7 +81,7 @@ function scrollToElem(){
     window.scrollTo(0, p + 8);
 
       if(p >= offset){
-        clearInterval(t);          
+        clearInterval(t);
       }
     }
   }, 0.01)
@@ -87,6 +99,10 @@ function scrollToElem(){
 function swipeMenu(){
   var el = getId(this.dataset.elem);
   el.style.left = 0;
+  //var div = document.createElement('div');
+  //div.style.background = 'black';
+  //el.parentNode.appendChild(div)
+  //alert(el.parentNode);
 
   getId(el.dataset.elClose).addEventListener('click', function(){
     el.style.left = - el.clientWidth - 5 + "px";
