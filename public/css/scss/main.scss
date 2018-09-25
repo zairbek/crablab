@@ -238,6 +238,19 @@ footer{
   display: none;
 }
 
+div.popup-alert{
+  display: block;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 200px;
+  border: 3px solid red;
+  z-index: 10;
+}
+
+
 #background{
   display: none;
   position: fixed;

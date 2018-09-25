@@ -8,16 +8,17 @@ function init(){
   getId("intro-footer__arrow").addEventListener('click', scrollToElem);
   getId("header-nav__menu").addEventListener('click', swipeMenu);
 
+
   // ==================================================
   var a = document.querySelectorAll("a[class=phone-number]");
   a.forEach(function(item){
     item.onclick = function(event){
       var device = typeDevice();
-      if(typeDevice() === "mobile"){
+      if(typeDevice() === "desktop"){
         event.preventDefault(alert(0));
       }
     }
-  })
+  });
   // ==================================================
 
 }
@@ -135,14 +136,14 @@ function swipeMenu(){
 
 
 
-
-
-
-
-
-
-
-
-function foo(dur){
+function popupRender(){
+  var _windowHeight = window.innerHeight;
+  var _windowWidth = window.innerWidth;
+  var el = getId("popup-alert");
+  var elWidth = el.offsetWidth;
+  var elHeight = el.offsetHeight;
+  el.style.visibility = "visible";
+  el.style.top = (_windowHeight / 2) - (elHeight / 1.5) + "px";
+  el.style.left = (_windowWidth / 2) - (elWidth / 2) + "px";
 
 }
