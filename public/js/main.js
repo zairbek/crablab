@@ -1,3 +1,6 @@
+// fn.apply()
+// obj.prototype
+
 window.addEventListener("load", init)
 
 function init(){
@@ -8,14 +11,15 @@ function init(){
   // ==================================================
   var a = document.querySelectorAll("a[class=phone-number]");
   a.forEach(function(item){
-    item.onclick = function(){
-      alert(11);
+    item.onclick = function(event){
+      var device = typeDevice();
+      if(typeDevice() === "mobile"){
+        event.preventDefault(alert(0));
+      }
     }
   })
   // ==================================================
-  
-  
-  
+
 }
 
 
@@ -33,14 +37,14 @@ function stretchBlock(attr){
 
 (function(){
   // функция для изменение темы браузера
-  var el = [], s, h = window.innerHeight;
+  var el = [], s, h;
   el[0] = document.querySelector("meta[name=theme-color]");
   el[1] = document.querySelector("meta[name=msapplication-navbutton-color]");
   el[2] = document.querySelector("meta[name=apple-mobile-web-app-status-bar-style]");
-  
+
   window.addEventListener('scroll', function(){
     s = window.pageYOffset || document.documentElement.scrollTop;
-  
+    h = window.innerHeight;
     if(h <= s){
       el[0].setAttribute('content', '#52cca8');
       el[1].setAttribute('content', '#52cca8');
@@ -96,10 +100,10 @@ function scrollToElem(){
   var offset =  toEl.offsetTop;
   var nowPosition = window.pageYOffset;
   var t;
-    
+
   t = setInterval(function(){
     if(nowPosition <= offset){
-    let p = window.pageYOffset; 
+    let p = window.pageYOffset;
     window.scrollTo(0, p + 8);
 
       if(p >= offset){
@@ -107,10 +111,7 @@ function scrollToElem(){
       }
     }
   }, 0.01)
-  
 
-
-  // window.scrollTo(0, offset);
 }
 
 
