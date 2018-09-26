@@ -27,7 +27,12 @@
         <ul class="intro-header__socials">
           <li><a href=""><i class="fab fa-twitter"></i></a></li>
           <li><a href=""><i class="fab fa-facebook"></i></a></li>
-          <li><a href="tel:+79772620626" class="phone-number"><i class="fas fa-phone"></i></a></li>
+          <li><a href="tel:+79772620626" 
+                 class="phone-number"
+                 data-popup-width="40"
+                 data-popup-height="200"
+                 data-popup-elem="popup-alert">
+            <i class="fas fa-phone"></i></a></li>
         </ul>
       </div>
 
@@ -74,7 +79,12 @@
         <ul class="header-contact__socials">
           <li><a href=""><i class="fab fa-twitter"></i></a></li>
           <li><a href=""><i class="fab fa-facebook"></i></a></li>
-          <li><a href="tel:+79772620626" class="phone-number"><i class="fas fa-phone"></i></a></li>
+          <li><a href="tel:+79772620626" 
+                 class="phone-number"
+                 data-popup-width="40"
+                 data-popup-height="200"
+                 data-popup-elem="popup-alert">
+            <i class="fas fa-phone"></i></a></li>
         </ul>
       </div>
 
@@ -126,9 +136,9 @@
 
   <div id="popup-alert"
        class="popup-alert"
-       data-el-close="popup_button_close">
+       data-el-close="popup-alert_button_close">
   
-    <button id="popup_button_close" class="popup_button_close">
+    <button id="popup-alert_button_close" class="popup-alert_button_close">
       <i class="far fa-times-circle"></i>
     </button>
 

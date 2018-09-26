@@ -10,15 +10,22 @@ function init(){
 
 
   // ==================================================
-  var a = document.querySelectorAll("a[class=phone-number]");
-  a.forEach(function(item){
-    item.onclick = function(event){
-      var device = typeDevice();
-      if(typeDevice() === "desktop"){
-        event.preventDefault(alert(0));
+  (function(){var a = document.querySelectorAll("a[class=phone-number]");
+    // подберает элементы по селекторам и вешает события 
+    // определяеть тип девайса (typeDevice), и вызывает функцию popupRender
+    //в качестве аргумента передается iam - это this;
+    a.forEach(function(item){
+      item.onclick = function(event){
+        var iam = this;
+        if(typeDevice() === "desktop"){
+
+          event.preventDefault(popupRender(iam));
+          event.preventDefault(backgroundRender(true));
+        }
       }
-    }
-  });
+    })
+  }
+  )();
   // ==================================================
 
 }
@@ -123,27 +130,48 @@ function scrollToElem(){
 function swipeMenu(){
   var el = getId(this.dataset.elem);
   el.style.left = 0;
-  //var div = document.createElement('div');
-  //div.style.background = 'black';
-  //el.parentNode.appendChild(div)
-  //alert(el.parentNode);
-
+  backgroundRender(true);
   getId(el.dataset.elClose).addEventListener('click', function(){
     el.style.left = - el.clientWidth - 5 + "px";
+    backgroundRender(false);
   })
 }
 // FINISHED========
 
 
 
-function popupRender(){
+
+function backgroundRender(arg){
+  var el = getId("background");
+  if(arg){
+    el.style.display = "block";
+  }else{
+    el.style.display = "";
+  }
+
+}
+
+function popupRender(arg){
+  var w = arg.dataset.popupWidth;
+  var h = arg.dataset.popupHeight;
+  var el = getId(arg.dataset.popupElem);
+  
   var _windowHeight = window.innerHeight;
   var _windowWidth = window.innerWidth;
-  var el = getId("popup-alert");
-  var elWidth = el.offsetWidth;
-  var elHeight = el.offsetHeight;
-  el.style.visibility = "visible";
-  el.style.top = (_windowHeight / 2) - (elHeight / 1.5) + "px";
-  el.style.left = (_windowWidth / 2) - (elWidth / 2) + "px";
+  el.style.display = "flex";
+  el.style.width = w + "%";
+  el.style.height = h + "px";
+  
+  el.style.top = (_windowHeight / 2) - (el.offsetHeight / 1.5) + "px";
+  el.style.left = (_windowWidth / 2) - (el.offsetWidth / 2) + "px";
 
+  window.addEventListener('keydown', function(e){ if(e.keyCode === 27){
+    el.style.display = "none";
+    backgroundRender(false)
+  }});
+  
+  getId(el.dataset.elClose).addEventListener("click", function(){
+    el.style.display = "none";
+    backgroundRender(false);
+  })
 }

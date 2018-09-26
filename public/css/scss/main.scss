@@ -238,16 +238,32 @@ footer{
   display: none;
 }
 
-div.popup-alert{
-  display: block;
-  visibility: hidden;
+.popup-alert{
+  //width & height добавляется с помощю javascript
+  //и оцентрируется через js
+  display: none;
+  flex-direction: column;
   position: fixed;
   top: 0;
   left: 0;
-  width: 50%;
-  height: 200px;
-  border: 3px solid red;
+  border: 1px solid silver;
+  border-radius: 5px;
   z-index: 10;
+  box-shadow: 0 0 10px 3px rgba(255,255,255,.5);
+  background-color: rgba(192, 192, 192, 0.6);
+
+  &_button_close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+    background: none;
+    border: none;
+
+    > i{
+      font-size: 1.5em;
+    }
+  }
 }
 
 
