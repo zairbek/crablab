@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+
+  <!--for Chrome, Firefox OS, Opera-->
+  <meta name="theme-color" content="#582b2b">
+  <!--for Windows Phone-->
+  <meta name="msapplication-navbutton-color" content="#582b2b">
+  <!--for iOS Safari-->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#582b2b">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+  <link rel="stylesheet" href="../css/library/fontAwasome/all.min.css">
+  <link rel="stylesheet" href="../css/library/animate.css">
+  <link rel="stylesheet" href="css/interior.css">
+
+  <title>CrabLab</title>
+</head>
+<body>
+  <script>
+    var div = document.createElement('div'), img = document.createElement('img');
+    div.setAttribute('id', 'loading');
+    div.style.display = 'flex';
+    img.setAttribute('src', '../image/interface/loading.gif');
+    div.appendChild(img);
+    document.body.appendChild(div);
+    window.addEventListener('load', function(){
+        document.getElementById('loading').style.display = 'none';
+    })
+  </script>
+
+  <!-- WRAPPER -->
+  <div class="wrapper" id="wrapper">
+
+    <!-- HEADER -->
+    <header id="header" class="header">
+      <nav class="header-nav">
+        <button class="header-nav__menu"
+                id="header-nav__menu"
+                data-elem="menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="header-nav__items">
+          <li><a href="/">Главная</a></li>
+          <li><a href="#">Меню</a></li>
+          <li><a href="#">Галерея</a></li>
+          <li><a href="#">О ресторане</a></li>
+        </ul>
+      </nav> 
+
+      <div class="header-logo">
+        <a href="/"><p>CrabLab</p></a>
+      </div>
+
+      <div class="header-contact">
+        <ul class="header-contact__socials">
+          <li><a href=""><i class="fab fa-twitter"></i></a></li>
+          <li><a href=""><i class="fab fa-facebook"></i></a></li>
+          <li><a href="tel:+79772620626" 
+                 class="phone-number"
+                 data-popup-width="40"
+                 data-popup-height="200"
+                 data-popup-elem="popup-alert">
+            <i class="fas fa-phone"></i></a></li>
+        </ul>
+      </div>
+
+    </header>
+    <!--end of HEADER -->
+
+
+    <!-- SECTION -->
+
+    <section id="overwiew-grid" class="overwiew-grid">
+      <header id="overwiew-grid_header" class="overwiew-grid_header">
+        
+      </header>
+
+      <div id="overwiew-grid_content" class="overwiew-grid_content">
+        
+        <div class="overwiew-grid_items">
+          <img src="image/6ed5db4776f24505adb51a7e3c8b2050.jpg" alt="" srcset="">
+        </div>
+  
+        <div class="overwiew-grid_items">
+          <img src="image/header-ID-FI.jpg" alt="" srcset="">
+        </div>
+  
+        <div class="overwiew-grid_items">
+          <img src="image/hillhouse-interiors-design-15.jpg" alt="" srcset="">
+        </div>
+  
+        <div class="overwiew-grid_items">
+          <img src="image/Immagine sito (1)-2.jpg" alt="" srcset="">
+        </div>
+  
+        <div class="overwiew-grid_items">
+          <img src="image/Kiev_Apt_MARTIN_architects_1.0.jpg" alt="" srcset="">
+        </div>
+  
+        <div class="overwiew-grid_items">
+          <img src="image/interior-design-license-2.jpg" alt="" srcset="">
+        </div>
+  
+        <div class="overwiew-grid_items">
+          <img src="image/Kiev_Apt_MARTIN_architects_1.0.jpg" alt="" srcset="">
+        </div>
+  
+        <div class="overwiew-grid_items">
+          <img src="image/sc.jpg" alt="" srcset="">
+        </div>
+  
+        <div class="overwiew-grid_items">
+          <img src="image/Immagine sito (1)-2.jpg" alt="" srcset="">
+        </div>
+  
+        <div class="overwiew-grid_items">
+          <img src="image/Kiev_Apt_MARTIN_architects_1.0.jpg" alt="" srcset="">
+        </div>
+  
+        <div class="overwiew-grid_items">
+          <img src="image/interior-design-license-2.jpg" alt="" srcset="">
+        </div>
+  
+        <div class="overwiew-grid_items">
+          <img src="image/Kiev_Apt_MARTIN_architects_1.0.jpg" alt="" srcset="">
+        </div>
+  
+        <div class="overwiew-grid_items">
+          <img src="image/sc.jpg" alt="" srcset="">
+        </div>
+  
+        <div class="overwiew-grid_items">
+          <img src="image/Immagine sito (1)-2.jpg" alt="" srcset="">
+        </div>
+  
+        <div class="overwiew-grid_items">
+          <img src="image/Kiev_Apt_MARTIN_architects_1.0.jpg" alt="" srcset="">
+        </div>
+  
+        <div class="overwiew-grid_items">
+          <img src="image/interior-design-license-2.jpg" alt="" srcset="">
+        </div>
+  
+        <div class="overwiew-grid_items">
+          <img src="image/Kiev_Apt_MARTIN_architects_1.0.jpg" alt="" srcset="">
+        </div>
+  
+        <div class="overwiew-grid_items">
+          <img src="image/sc.jpg" alt="" srcset="">
+        </div>
+
+      </div>
+      
+    </section>
+
+
+
+    <!--end of SECTION -->
+
+
+
+
+
+    <!-- FOOTER -->
+    <footer>
+      <p>loremasdas</p>
+      <p>loremasdas</p>
+      <p>loremasdas</p>
+    </footer>
+    <!-- end FOOTER -->
+
+  </div>
+  <!-- end WRAPPER -->
+
+
+
+
+
+
+
+  <nav class="menu" 
+       id="menu"
+       data-el-close="menu__button_close">
+      
+       <button class="menu__button_close" id="menu__button_close">
+          <i class="fas fa-arrow-left"></i>
+      </button>
+
+      <ul class="menu__items">
+        <li><a href="/">Главная</a></li>
+        <li><a href="#">Меню</a></li>
+        <li><a href="#">Галерея</a></li>
+        <li><a href="#">О ресторане</a></li>
+      </ul>
+  </nav>
+
+  <div id="popup-alert"
+       class="popup-alert"
+       data-el-close="popup-alert_button_close">
+  
+    <button id="popup-alert_button_close" class="popup-alert_button_close">
+      <i class="far fa-times-circle"></i>
+    </button>
+
+  </div>
+  
+  <div id="background"></div>
+
+
+  <script src="js/interior.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

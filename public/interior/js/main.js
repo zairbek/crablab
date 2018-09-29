@@ -4,11 +4,11 @@
 window.addEventListener("load", init)
 
 function init(){
-  stretchBlock(getId("intro"), "1/1");
-  stretchBlock(getId("menu-restourant"), "3/4");
-  stretchBlock(getId("interior"), "3/4");
-  stretchBlock(getId("address"), "1/1");
-  getId("intro-footer__arrow").addEventListener('click', scrollToElem);
+  // stretchBlock(getId("intro"), "1/1");
+  // stretchBlock(getId("menu-restourant"), "3/4");
+  // stretchBlock(getId("interior"), "3/4");
+  // stretchBlock(getId("address"), "1/1");
+  // getId("intro-footer__arrow").addEventListener('click', scrollToElem);
   getId("header-nav__menu").addEventListener('click', swipeMenu);
 
 
@@ -38,24 +38,24 @@ function init(){
 // FINISHED========
 getId = (attr) => document.getElementById(attr);
 
-window.onresize = function(){
-  stretchBlock(getId("intro"), "1/1");
-  stretchBlock(getId("menu-restourant"), "3/4");
-  stretchBlock(getId("interior"), "3/4");
-  stretchBlock(getId("address"), "1/1");
-};
+// window.onresize = function(){
+  // stretchBlock(getId("intro"), "1/1");
+  // stretchBlock(getId("menu-restourant"), "3/4");
+  // stretchBlock(getId("interior"), "3/4");
+  // stretchBlock(getId("address"), "1/1");
+// };
 
-function stretchBlock(attr, size){
-  let h = window.innerHeight;
-  switch(size){
-    case "1/1": attr.style.height = h + "px"; break;
-    case "1/2": attr.style.height = h / 2 + "px"; break;
-    case "2/3": attr.style.height = h / 1.5 + "px"; break;
-    case "3/4": attr.style.height = h - (h / 4) + "px"; break;
-    default: alert(size);
-  }
-  
-};
+// function stretchBlock(attr, size){
+  // let h = window.innerHeight;
+  // switch(size){
+    // case "1/1": attr.style.height = h + "px"; break;
+    // case "1/2": attr.style.height = h / 2 + "px"; break;
+    // case "2/3": attr.style.height = h / 1.5 + "px"; break;
+    // case "3/4": attr.style.height = h - (h / 4) + "px"; break;
+    // default: alert(size);
+  // }
+// };
+
 
 (function(){
   // функция для изменение темы браузера
@@ -117,24 +117,24 @@ function typeDevice (){
 
 
 
-function scrollToElem(){
-  var toEl = getId(this.dataset.scrollToElemId);
-  var offset =  toEl.offsetTop;
-  var nowPosition = window.pageYOffset;
-  var t;
+// function scrollToElem(){
+//   var toEl = getId(this.dataset.scrollToElemId);
+//   var offset =  toEl.offsetTop;
+//   var nowPosition = window.pageYOffset;
+//   var t;
 
-  t = setInterval(function(){
-    if(nowPosition <= offset){
-    let p = window.pageYOffset;
-    window.scrollTo(0, p + 8);
+//   t = setInterval(function(){
+//     if(nowPosition <= offset){
+//     let p = window.pageYOffset;
+//     window.scrollTo(0, p + 8);
 
-      if(p >= offset){
-        clearInterval(t);
-      }
-    }
-  }, 0.01)
+//       if(p >= offset){
+//         clearInterval(t);
+//       }
+//     }
+//   }, 0.01)
 
-}
+// }
 
 
 
