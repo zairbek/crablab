@@ -1,16 +1,9 @@
-// fn.apply()
-// obj.prototype
-
 window.addEventListener("load", init)
 
 function init(){
   stretchBlock(getId("intro"), "1/1");
-  stretchBlock(getId("menu-restourant"), "3/4");
-  stretchBlock(getId("interior"), "3/4");
-  stretchBlock(getId("address"), "1/1");
-  getId("intro-footer__arrow").addEventListener('click', scrollToElem);
-  getId("header-nav__menu").addEventListener('click', swipeMenu);
-
+  stretchBlock(getId("menu-review"), "1/1");
+  
 
   // ==================================================
   (function(){
@@ -32,6 +25,45 @@ function init(){
   )();
   // ==================================================
 
+
+
+  
+  $('.dishes-top-side').slick({
+    dots: true,
+    centerMode: true,
+    centerPadding: '60px',
+    slidesToShow: 1,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
+
+
+  $('.interior-right-side').slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    adaptiveHeight: true
+  });
+
 }
 
 
@@ -40,9 +72,7 @@ getId = (attr) => document.getElementById(attr);
 
 window.onresize = function(){
   stretchBlock(getId("intro"), "1/1");
-  stretchBlock(getId("menu-restourant"), "3/4");
-  stretchBlock(getId("interior"), "3/4");
-  stretchBlock(getId("address"), "1/1");
+  stretchBlock(getId("menu-review"), "1/1");
 };
 
 function stretchBlock(attr, size){
@@ -52,32 +82,9 @@ function stretchBlock(attr, size){
     case "1/2": attr.style.height = h / 2 + "px"; break;
     case "2/3": attr.style.height = h / 1.5 + "px"; break;
     case "3/4": attr.style.height = h - (h / 4) + "px"; break;
-    default: alert(size);
   }
   
 };
-
-(function(){
-  // функция для изменение темы браузера
-  var el = [], s, h;
-  el[0] = document.querySelector("meta[name=theme-color]");
-  el[1] = document.querySelector("meta[name=msapplication-navbutton-color]");
-  el[2] = document.querySelector("meta[name=apple-mobile-web-app-status-bar-style]");
-
-  window.addEventListener('scroll', function(){
-    s = window.pageYOffset || document.documentElement.scrollTop;
-    h = window.innerHeight;
-    if(h <= s){
-      el[0].setAttribute('content', '#52cca8');
-      el[1].setAttribute('content', '#52cca8');
-      el[2].setAttribute('content', '#52cca8');
-    }else{
-      el[0].setAttribute('content', '#582b2b');
-      el[1].setAttribute('content', '#582b2b');
-      el[2].setAttribute('content', '#582b2b');
-    }
-  })
-}).call(this)
 
 // FINISHED========
 
@@ -114,28 +121,6 @@ function typeDevice (){
 
 
 // =====================================================================================
-
-
-
-function scrollToElem(){
-  var toEl = getId(this.dataset.scrollToElemId);
-  var offset =  toEl.offsetTop;
-  var nowPosition = window.pageYOffset;
-  var t;
-
-  t = setInterval(function(){
-    if(nowPosition <= offset){
-    let p = window.pageYOffset;
-    window.scrollTo(0, p + 8);
-
-      if(p >= offset){
-        clearInterval(t);
-      }
-    }
-  }, 0.01)
-
-}
-
 
 
 

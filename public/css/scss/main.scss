@@ -5,6 +5,8 @@
 	border: 0;
   vertical-align: baseline;
   font-family: Comfortaa;
+  color: #fff;
+
 }
 body {
 	line-height: 1;
@@ -20,14 +22,15 @@ a{
 
 
 // VARIABLES ========================
-$font-global-color: #000;
-$wrapper-background: rgb(226, 226, 226);
-$header-background: rgba(115, 217, 255, 0.27);
+$font-global-color: #fff;
+$wrapper-background: rgba(226, 226, 226, 0);
+
+$header-background: rgb(0, 0, 0);
 $header-nav__item_hover_background: rgba(250, 250, 250, 1);
 
 $intro-footer__socials__color: rgb(46, 255, 255);
 
-$section-background: #fff;
+$section-background: rgba(0, 0, 0, 0.329);
 // VARIABLES ========================
 
 
@@ -39,8 +42,134 @@ body{
     position: relative;
     background: $wrapper-background;
 
+    .bg{
+      position: fixed;
+      top: 0; left: 0; bottom: 0;right: 0; 
+      z-index: -1;
+      background: radial-gradient(circle, rgba(22, 48, 86, 0), rgb(22, 48, 86) 60%) , url(../image/bg.jpg) no-repeat center, #000;
+
+      >img{
+        position: absolute;
+        top: 0; left: 0; 
+        z-index: -0;
+        object-fit: contain;
+        
+      }
+    }
   }
 }
+
+
+
+// HEADER============
+.header{
+  width: 100%;
+  height: 40px;
+  margin: 0 auto;
+  padding: 0 30px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+
+  background: $header-background;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+
+
+  &-logo{
+    p{
+      font-weight: 900;
+      font-size: 1.1em;
+      color: $font-global-color;
+
+    }
+  }
+
+
+  &-nav{
+    
+    
+    &__items{
+      display: flex;
+      flex-direction: row;
+      
+      >li{
+        padding: 0 10px;
+        
+        transition: all .3s linear;
+
+        >a{
+          font-size: 0.9em;
+          line-height: 40px;
+          color: $font-global-color;
+          transition: all .3s linear;
+
+        }
+
+        &:hover{
+          background-color: $header-nav__item_hover_background;
+
+          > a{
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+
+
+
+  &-contact{
+
+
+    &__socials{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-content: center;
+    
+      >li{
+        padding: 0 8px;
+        transition: all .3s linear;
+        >a{
+
+          >i{
+            font-size: 1.2em;
+            line-height: 30px;
+            color: $font-global-color;
+            transition: all .3s linear;
+
+          }
+        }
+
+        &:hover{
+          border-radius: 5px;
+          background-color: $header-nav__item_hover_background;
+        
+          >a >i {
+            color: rgb(46, 171, 255);
+          }
+        }
+      }
+    }
+
+
+    &__menu{
+      display: none;
+    }
+  }
+
+}
+// end HEADER============
+
+
+
+
 
 
 // ========= INTRO
@@ -64,8 +193,6 @@ body{
     justify-content: center;
     align-items: center;
 
-    background: linear-gradient(180deg, rgb(88, 43, 43), rgba(255,255,255,.0));
-
     &__socials{
       display: flex;
       flex-direction: row;
@@ -88,9 +215,7 @@ body{
   &-wrapper{
     width: 80%;
     text-align: center;
-
     color: #fff;
-    background: linear-gradient(0deg, rgba(88, 43, 43,.0), rgb(88, 43, 43), rgba(88, 43, 43,.0));
     
     h1{
       margin-bottom: 20px;
@@ -99,6 +224,7 @@ body{
 
     p i{
       font-size: 1.3em;
+      line-height: 1.3em;
     }
   }
 
@@ -106,8 +232,6 @@ body{
   &-footer{
     width: 100%;
     height: 60px;
-
-    background: linear-gradient(0deg, rgb(88, 43, 43), rgba(255,255,255,.0));
 
 
     &__arrow{
@@ -119,7 +243,6 @@ body{
       border-radius: 50%;
       background: transparent;
       cursor: pointer;
-      // animation: jumping-arrow 2s linear infinite;
       
       &:focus{
         outline: none;
@@ -135,105 +258,16 @@ body{
 
 
 
-// HEADER============
-.header{
-  width: 80%;
-  height: 40px;
-  margin: 0 auto;
-
-  position: sticky;
-  top: 0;
-  z-index: 3;
-
-  background: $header-background;
-  border-bottom: 3px solid rgb(82, 204, 168);
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
-  &-nav{
-    
-
-    &__menu{
-      display: none;
-    }
-    
-    &__items{
-      display: flex;
-      flex-direction: row;
-      
-      >li{
-        padding: 0 5px;
-        
-        transition: all .3s linear;
-
-        >a{
-          font-size: 0.9em;
-          line-height: 40px;
-        }
-
-        &:hover{
-          background-color: $header-nav__item_hover_background;
-        }
-      }
-    }
-  }
-
-
-  &-logo{
-    p{
-      font-weight: 900;
-      font-size: 1.1em;
-    }
-  }
-
-
-
-  &-contact{
-
-
-    &__socials{
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-content: center;
-    
-      >li{
-        padding: 0 8px;
-        transition: all .3s linear;
-        >a{
-
-          >i{
-            font-size: 1.2em;
-            line-height: 30px;
-            color: #000;
-          }
-        }
-
-        &:hover{
-          border-radius: 5px;
-          background-color: $header-nav__item_hover_background;
-        }
-      }
-    }
-  }
-
-}
-// end HEADER============
-
-
 // MENU-RESTOURANT=================== 
 .menu-restourant{
-  display: -webkit-flex;
   display: flex;
   flex-direction: row;
 
-  width: 80%;
-  margin: 40px auto;
+  width: 100%;
+  height: 600px;
+  padding: 0 10%;
+  margin: 50px auto;
+  box-sizing: border-box;
 
   border-radius: 5px;
   background-color: $section-background;
@@ -284,6 +318,8 @@ body{
 
   &-right-side{
     width: 55%;
+    padding: 50px 0;
+    box-sizing: border-box;
     display: block;
 
     &_bg{
@@ -297,6 +333,60 @@ body{
 }
 
 // MENU-RESTOURANT=================== 
+
+
+
+
+// MENU-REVIEW=================== 
+.menu-review{
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  width: 100%;
+  height: 600px;
+  padding: 0 10%;
+  margin: 50px auto;
+  box-sizing: border-box;
+
+  border-radius: 5px;
+
+  &-bg-side{
+    position: absolute;
+    left: 0;top: 0;right: 0;bottom: 0;
+    z-index: -1;
+   
+    >img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-center-side{ 
+    width: 70%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    background-color: rgb(0,0,0);
+
+    >p{
+      font-size: 1.4em;
+      line-height: 1.5em;
+    }
+  }
+}
+
+// MENU-REVIEW=================== 
+
+
+
 
 // INTERIOR===============
 .interior{
@@ -304,8 +394,11 @@ body{
   display: flex;
   flex-direction: row;
 
-  width: 80%;
-  margin: 40px auto;
+  width: 100%;
+  height: 500px;
+  padding: 0 10%;
+  margin: 50px auto;
+  box-sizing: border-box;
 
   border-radius: 5px;
   background-color: $section-background;
@@ -314,11 +407,13 @@ body{
   &-right-side{
     width: 55%;
     display: block;
+    padding: 50px 0; 
 
     &_bg{
       object-fit: cover;
       width: 100%;
-      height: 100%;
+      height: 400px;
+      margin: 0 5px;
     }
   }
 
@@ -368,21 +463,85 @@ body{
 }
 // INTERIOR===============
 
+
+// DISHES===============
+.dishes{
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  padding: 50px 5%;
+  margin: 50px auto;
+  box-sizing: border-box;
+
+  border-radius: 5px;
+  background-color: $section-background;
+
+
+  &-top-side{
+    width: 100%;
+
+    &_bg{
+      object-fit: cover;
+      width: 100%;
+      height: 500px;
+      margin: 0 10px;
+    }
+  }
+
+  &-bottom-side{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    text-align: left;
+
+    >h1{
+      font-size: 2em;
+      line-height: 1.2em;
+      margin: 20px 40px;
+    }
+
+    >p{
+      font-size: 1em;
+      font-style: italic;
+      line-height: 1.5em;
+      text-align: center;
+      margin: 20px 40px 40px;
+    }
+
+  }
+
+}
+// DISHES===============
+
+
+
+
 // ADDRESS===========
 .address{
   display: -webkit-flex;
   display: flex;
   flex-direction: column;
+  
 
-  width: 80%;
-  margin: 40px auto;
+  width: 100%;
+  height: 700px;
+  margin: 50px auto;
+  box-sizing: border-box;
 
   border-radius: 5px;
   background-color: $section-background;
 
-  &-text{
+  &-header{
     width: 100%;
     height: 150px;
+    padding: 0 10%;
+    box-sizing: border-box;
     display: -webkit-flex;
     display: flex;
     flex-direction: column;
@@ -399,6 +558,23 @@ body{
     height: 100%;
     border-radius: 5px;
   }
+
+  &-footer{
+    width: 100%;
+    height: 150px;
+    padding: 0 10%;
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    p{
+      padding: 5px 50px;
+      text-align: center;
+      font-size: 1.1em;
+      line-height: 1.1em;
+    }
+  }
 }
 
 
@@ -412,22 +588,47 @@ body{
 
 
 
-footer{
-  width: 80%;
+.footer{
+  width: 100%;
   height: 100px;
 
   display: -webkit-flex;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center; 
+  box-sizing: border-box;
+  padding: 0 20px;
 
-  border-top: 3px solid rgb(82, 204, 168);
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  margin: 0 auto;
   background-color: $header-background;
 
+
+  &-nav{
+    
+    
+    &__items{
+      display: flex;
+      flex-direction: row;
+      
+      >li{
+        padding: 0 10px;
+        >a{
+          font-size: 0.9em;
+          line-height: 40px;
+          color: $font-global-color;
+        }
+      }
+    }
+  }
+
+  &-logo{
+    p{
+      font-weight: 900;
+      font-size: 1.1em;
+      color: $font-global-color;
+
+    }
+  }
 }
 
 
