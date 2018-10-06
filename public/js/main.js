@@ -59,7 +59,10 @@ function init(){
   $('.interior-right-side').slick({
     dots: true,
     infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
     speed: 300,
+    arrows: false,
     slidesToShow: 1,
     adaptiveHeight: true
   });
