@@ -47,11 +47,11 @@
       </div>
 
       <nav class="header-nav">
-        <ul class="header-nav__items">
-          <li><a href="#">Главная</a></li>
-          <li><a href="#">Меню</a></li>
-          <li><a href="/interior">Галерея</a></li>
-          <li><a href="#">О ресторане</a></li>
+        <ul class="script-nav header-nav__items">
+          <li><a href="#intro">Главная</a></li>
+          <li><a href="#menu-restourant">Меню</a></li>
+          <li><a href="#interior">Галерея</a></li>
+          <li><a href="#address">О ресторане</a></li>
         </ul>
       </nav> 
 
@@ -67,11 +67,11 @@
             <i class="fas fa-phone"></i></a></li>
         </ul>
 
-        <button class="header-contact__menu"
-                id="header-contact__menu"
-                data-elem="menu">
+        <a class="header-contact__menu"
+                id="demo1"
+                href="#animatedModal">
             <i class="fas fa-bars"></i>
-        </button>
+        </a>
       </div>
 
     </header>
@@ -80,25 +80,11 @@
     
 
     
-    <!-- SECTION -->
+    <!-- SECTIONS -->
     <!-- INTRO  -->
     <section class="intro" id="intro">
       <div class="intro-header">
-        <ul class="intro-header__socials">
-          <li><a href=""
-                title="Мы в Tweetter!">
-            <i class="fab fa-twitter"></i></a></li>
-          <li><a href=""
-                title="Мы в Instagram!">
-            <i class="fab fa-facebook"></i></a></li>
-          <li><a href="tel:+79772620626" 
-                class="phone-number"
-                data-popup-width="40"
-                data-popup-height="200"
-                data-popup-elem="popup-alert"
-                title="Телефон номер ресторана">
-            <i class="fas fa-phone"></i></a></li>
-        </ul>
+
       </div>
 
       <div class="intro-wrapper">
@@ -107,15 +93,14 @@
       </div>
 
       <div class="intro-footer">
-        <button id="intro-footer__arrow" 
-                class="intro-footer__arrow
-                      animated infinite bounce delay-5s"
-                data-scroll-to-elem-id="header"
-                data-scroll-speed=""
-                title="Вниз">
+        <a id="intro-footer__arrow" 
+           href="#menu-restourant"     
+           class="intro-footer__arrow
+                  animated infinite bounce delay-5s"
+           title="Вниз">
         
           <i class="fas fa-arrow-down"></i>
-        </button>
+      </a>
       </div>
     </section>
     <!-- end of INTRO -->
@@ -129,7 +114,7 @@
         <a href="/" class="menu-restourant-left-side-link-to">Меню</a>
       </div>
       <div class="menu-restourant-right-side">
-        <img src="image/menu-restourant/bg.jpg" alt="" class="menu-restourant-right-side_bg">
+        <img data-src="image/content/menu-restourant/bg.jpg" alt="" class="menu-restourant-right-side_bg">
       </div>
     </section>
     <!-- end section menu-restourant -->
@@ -137,7 +122,7 @@
     <!-- section menu-review -->
     <section id="menu-review" class="menu-review">
       <div class="menu-review-bg-side">
-          <img src="image/menu-restourant/bg.jpg" alt="" class="menu-review-right-side_bg">
+          <img data-src="image/content/menu-restourant/bg.jpg" alt="" class="menu-review-right-side_bg">
       </div>
 
       <div class="menu-review-center-side">
@@ -148,12 +133,12 @@
 
     <!-- section interior -->
     <section  id="interior" class="interior">
-      <div class="interior-right-side">
-        <img src="image/interior/bg.jpg" alt="" class="interior-right-side_bg">
-        <img src="image/interior/bg.jpg" alt="" class="interior-right-side_bg">
-        <img src="image/interior/bg.jpg" alt="" class="interior-right-side_bg">
-        <img src="image/interior/bg.jpg" alt="" class="interior-right-side_bg">
-        <img src="image/interior/bg.jpg" alt="" class="interior-right-side_bg">
+      <div id="interior-right-side" class="interior-right-side">
+        <img data-src="image/content/intro/image.jpg" src="image/content/interior/bg-thumb.jpg" alt="" class="interior-right-side_bg">
+        <img data-src="image/content/interior/bg.jpg" src="image/content/interior/bg-thumb.jpg" alt="" class="interior-right-side_bg">
+        <img data-src="image/content/interior/bg.jpg" src="image/content/interior/bg-thumb.jpg" alt="" class="interior-right-side_bg">
+        <img data-src="image/content/interior/bg.jpg" src="image/content/interior/bg-thumb.jpg" alt="" class="interior-right-side_bg">
+        <img data-src="image/content/interior/bg.jpg" src="image/content/interior/bg-thumb.jpg" alt="" class="interior-right-side_bg">
       </div>
       <div class="interior-left-side">
         <h1>Lorem ipsum dolor sit amet consectetur.</h1>
@@ -166,11 +151,11 @@
     <!-- section dishes -->
     <section  id="dishes" class="dishes">
         <div class="dishes-top-side">
-          <img src="image/bg.jpg" alt="" class="dishes-top-side_bg">
-          <img src="image/bg.jpg" alt="" class="dishes-top-side_bg">
-          <img src="image/bg.jpg" alt="" class="dishes-top-side_bg">
-          <img src="image/bg.jpg" alt="" class="dishes-top-side_bg">
-          <img src="image/bg.jpg" alt="" class="dishes-top-side_bg">
+          <img data-src="image/bg.jpg" alt="1" class="dishes-top-side_bg">
+          <img data-src="image/bg.jpg" alt="2" class="dishes-top-side_bg">
+          <img data-src="image/bg.jpg" alt="3" class="dishes-top-side_bg">
+          <img data-src="image/bg.jpg" alt="4" class="dishes-top-side_bg">
+          <img data-src="image/bg.jpg" alt="5" class="dishes-top-side_bg">
         </div>
         <div class="dishes-bottom-side">
           <h1>Lorem ipsum dolor sit amet consectetur.</h1>
@@ -204,11 +189,11 @@
     <!-- FOOTER -->
     <footer id="footer" class="footer">
       <nav class="footer-nav">
-        <ul class="footer-nav__items">
-          <li><a href="#">Главная</a></li>
-          <li><a href="#">Меню</a></li>
-          <li><a href="/interior">Галерея</a></li>
-          <li><a href="#">О ресторане</a></li>
+        <ul class="script-nav footer-nav__items">
+          <li><a href="#intro">Главная</a></li>
+          <li><a href="#menu-restiourant">Меню</a></li>
+          <li><a href="#interior">Галерея</a></li>
+          <li><a href="#address">О ресторане</a></li>
         </ul>
       </nav> 
 
@@ -227,34 +212,51 @@
 
 
 
-
-  <nav class="menu" 
-       id="menu"
-       data-el-close="menu__button_close">
+  <!-- MENU -->
+  <nav class="menu" id="animatedModal">
       
-       <button class="menu__button_close" id="menu__button_close">
-          <i class="fas fa-arrow-left"></i>
-      </button>
+      <div class="close-animatedModal" id="close-animatedModal">
+        <i class="fas fa-times"></i>
+      </div>
 
-      <ul class="menu__items">
-        <li><a href="#">Главная</a></li>
-        <li><a href="#">Меню</a></li>
-        <li><a href="#">Галерея</a></li>
-        <li><a href="#">О ресторане</a></li>
-      </ul>
+      <a class="nav nav-socials-1
+                animated infinite tada" 
+         href="">
+        <i class="fab fa-twitter"></i></a>
+      
+      <a class="nav nav-socials-2
+                animated infinite tada" 
+         href="">
+        <i class="fab fa-facebook"></i></a>
+      
+      <a class="nav nav-phone-number
+                animated infinite tada" 
+         href="tel:+79772620626">
+        <i class="fas fa-phone"></i>
+      </a>
+
+      <div class="modal-content">
+        <ul id="menu__items" class="menu__items">
+          <li><a href="#intro">Главная</a></li>
+          <li><a href="#menu-restourant">Меню</a></li>
+          <li><a href="#interior">Галерея</a></li>
+          <li><a href="#address">О ресторане</a></li>
+        </ul>
+      </div>
   </nav>
+  <!-- end MENU -->
 
-  <div id="popup-alert"
-       class="popup-alert"
-       data-el-close="popup-alert_button_close">
-  
-    <button id="popup-alert_button_close" class="popup-alert_button_close">
-      <i class="far fa-times-circle"></i>
-    </button>
+  <!-- <div id="popupModal" class="popupModal">
+    <div class="close-popupModal">
+      <i class="fas fa-times"></i>
+    </div>
 
-  </div>
+    <div class="modal-content">
+      
+      
+    </div>
+  </div> -->
   
-  <div id="background"></div>
 
 
 
@@ -262,7 +264,10 @@
 
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@8.17.0/dist/lazyload.min.js"></script>
   <script src="js/slick.min.js"></script>
+  <script src="js/jquery.viewportchecker.min.js"></script>
+  <script src="js/animatedModal.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

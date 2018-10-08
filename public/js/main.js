@@ -12,12 +12,11 @@ function init(){
     // определяеть тип девайса (typeDevice), и вызывает функцию popupRender
     //в качестве аргумента передается iam - это this;
     a.forEach(function(item){
-      item.onclick = function(event){
+      item.onclick = function(e){
         var iam = this;
         if(typeDevice() === "desktop"){
-
-          event.preventDefault(popupRender(iam));
-          event.preventDefault(backgroundRender(true));
+          
+          
         }
       }
     })
@@ -27,12 +26,14 @@ function init(){
 
 
 
+  var res = typeDevice() === "desktop" ? true : false; 
   
   $('.dishes-top-side').slick({
     dots: true,
     centerMode: true,
     centerPadding: '60px',
     slidesToShow: 1,
+    arrows: res,
     responsive: [
       {
         breakpoint: 768,
@@ -40,7 +41,7 @@ function init(){
           arrows: false,
           centerMode: true,
           centerPadding: '40px',
-          slidesToShow: 3
+          slidesToShow: 1
         }
       },
       {
@@ -56,16 +57,77 @@ function init(){
   });
 
 
+  
   $('.interior-right-side').slick({
     dots: true,
     infinite: true,
     autoplay: true,
     autoplaySpeed: 2000,
     speed: 300,
-    arrows: false,
+    arrows: res,
     slidesToShow: 1,
     adaptiveHeight: true
   });
+
+
+  var menuRestourant = new LazyLoad({
+    elements_selector: ".menu-restourant-right-side_bg"
+  })
+  var menuReview = new LazyLoad({
+    elements_selector: ".menu-review-right-side_bg"
+  })
+  var interior = new LazyLoad({
+    elements_selector: ".interior-right-side_bg"
+  })
+  var dishes = new LazyLoad({
+    elements_selector: ".dishes-top-side_bg"
+  })
+
+
+  $("#demo1").animatedModal({
+    color: "rgb(23, 173, 233)",
+    animationDuration: ".6s",
+    animatedIn: "bounceInDown",
+    animatedOut: "bounceOutUp"
+  });
+
+
+
+
+  // var arr = document.querySelectorAll(".dishes-top-side_bg");
+  // arr.forEach(function(item){
+  //   item.addEventListener("click", function(e){
+  //     console.log(e.target.getAttribute("data-src"))
+  //   })
+  // })
+
+  
+
+  $(".script-nav li a").click(function(e){
+    e.preventDefault();
+    var id = $(this).attr("href");
+    var top = $(id).offset().top;
+    $("body, html").animate({scrollTop: top}, 1000);
+  });
+  $("#intro-footer__arrow").click(function(e){
+    e.preventDefault();
+    var id = $(this).attr("href");
+    var top = $(id).offset().top;
+    $("body, html").animate({scrollTop: top}, 1000);
+  });
+  $("#menu__items li a").click(function(e){
+    e.preventDefault();
+    var id = $(this).attr("href");
+    var top = $(id).offset().top;
+    $("body, html").animate({scrollTop: top}, 1000);
+  });
+
+
+  $("section").addClass("hidden").viewportChecker({
+    classToAdd: "visible animated fadeInUp",
+    offset: 100
+  })
+
 
 }
 
@@ -128,60 +190,6 @@ function typeDevice (){
 
 
 
-// FINISHED========
-function swipeMenu(){
-  var el = getId(this.dataset.elem);
-  el.style.left = 0;
-  backgroundRender(true);
-  getId("background").addEventListener('click', function(){
-    el.style.left = - el.clientWidth - 5 + "px";
-    backgroundRender(false);
-  })
-  getId(el.dataset.elClose).addEventListener('click', function(){
-    el.style.left = - el.clientWidth - 5 + "px";
-    backgroundRender(false);
-  })
-}
-// FINISHED========
 
 
 
-
-function backgroundRender(arg){
-  var el = getId("background");
-  if(arg){
-    el.style.display = "block";
-    
-  }else{
-    el.style.display = "";
-  }
-
-}
-
-function popupRender(arg){
-  var w = arg.dataset.popupWidth;
-  var h = arg.dataset.popupHeight;
-  var el = getId(arg.dataset.popupElem);
-  
-  var _windowHeight = window.innerHeight;
-  var _windowWidth = window.innerWidth;
-  el.style.display = "flex";
-  el.style.width = w + "%";
-  el.style.height = h + "px";
-  
-  el.style.top = (_windowHeight / 2) - (el.offsetHeight / 1.5) + "px";
-  el.style.left = (_windowWidth / 2) - (el.offsetWidth / 2) + "px";
-
-  window.addEventListener('keydown', function(e){ if(e.keyCode === 27){
-    el.style.display = "none";
-    backgroundRender(false)
-  }});
-  getId("background").addEventListener('click', function(){
-    el.style.display = "none";
-    backgroundRender(false);
-  })
-  getId(el.dataset.elClose).addEventListener("click", function(){
-    el.style.display = "none";
-    backgroundRender(false);
-  })
-}
