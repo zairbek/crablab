@@ -5,26 +5,7 @@ function init(){
   stretchBlock(getId("menu-review"), "1/1");
   
 
-  // ==================================================
-  (function(){
-    var a = document.querySelectorAll("a[class=phone-number]");
-    // подберает элементы по селекторам и вешает события 
-    // определяеть тип девайса (typeDevice), и вызывает функцию popupRender
-    //в качестве аргумента передается iam - это this;
-    a.forEach(function(item){
-      item.onclick = function(e){
-        var iam = this;
-        if(typeDevice() === "desktop"){
-          
-          
-        }
-      }
-    })
-  }
-  )();
-  // ==================================================
-
-
+  //  SLIDES =========== 
 
   var res = typeDevice() === "desktop" ? true : false; 
   
@@ -68,8 +49,9 @@ function init(){
     slidesToShow: 1,
     adaptiveHeight: true
   });
+  //  SLIDES =========== 
 
-
+  //  LAZYLOADS ======== 
   var menuRestourant = new LazyLoad({
     elements_selector: ".menu-restourant-right-side_bg"
   })
@@ -82,8 +64,12 @@ function init(){
   var dishes = new LazyLoad({
     elements_selector: ".dishes-top-side_bg"
   })
+  //  LAZYLOADS ======== 
 
 
+
+
+  //  ANIMATEDMODAL ========= 
   $("#demo1").animatedModal({
     color: "rgb(23, 173, 233)",
     animationDuration: ".6s",
@@ -93,16 +79,49 @@ function init(){
 
 
 
-
-  // var arr = document.querySelectorAll(".dishes-top-side_bg");
-  // arr.forEach(function(item){
-  //   item.addEventListener("click", function(e){
-  //     console.log(e.target.getAttribute("data-src"))
-  //   })
-  // })
-
+  if(typeDevice () == "desktop"){
+    $(".phone-number").animatedModal({
+      modalTarget: "popupmodal",
+      color: "rgba(0,0,0,.0)",
+      animationDuration: ".6s",
+      animatedIn: "bounceIn",
+      animatedOut: "bounceOut",
+    });  
+  }
   
 
+  (function($){
+    $("img").each(function(k,v){
+      $(v).animatedModal({
+        modalTarget: "viewimg",
+        color: "rgb(23, 173, 233)",
+        animationDuration: ".3s",
+        animatedIn: "fadeInUp",
+        animatedOut: "fadeOutDown",
+      });
+      $(v).click(function(e){
+        var src = $(this).attr("data-src");
+        $(".viewimg-content img").attr("src", src);      
+      })
+      
+    })    
+  })(jQuery)
+
+  $("#menu-restourant-left-side-link-to").animatedModal({
+    modalTarget: "viewmenu",
+    color: "rgb(255, 255, 255)",
+    animationDuration: ".6s",
+    animatedIn: "bounceInDown",
+    animatedOut: "bounceOutUp"
+  });
+  // end  ANIMATEDMODAL ========= 
+
+
+
+
+
+  
+  // SLOWSCROLLING ================ 
   $(".script-nav li a").click(function(e){
     e.preventDefault();
     var id = $(this).attr("href");
@@ -122,11 +141,11 @@ function init(){
     $("body, html").animate({scrollTop: top}, 1000);
   });
 
-
   $("section").addClass("hidden").viewportChecker({
     classToAdd: "visible animated fadeInUp",
     offset: 100
   })
+  // SLOWSCROLLING ================ 
 
 
 }
@@ -186,10 +205,5 @@ function typeDevice (){
 
 
 // =====================================================================================
-
-
-
-
-
 
 

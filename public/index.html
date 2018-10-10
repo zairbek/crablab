@@ -61,15 +61,13 @@
           <li><a href=""><i class="fab fa-facebook"></i></a></li>
           <li><a href="tel:+79772620626" 
                   class="phone-number"
-                  data-popup-width="40"
-                  data-popup-height="200"
-                  data-popup-elem="popup-alert">
+                  data-href="#popupmodal">
             <i class="fas fa-phone"></i></a></li>
         </ul>
 
         <a class="header-contact__menu"
                 id="demo1"
-                href="#animatedModal">
+                data-href="#animatedModal">
             <i class="fas fa-bars"></i>
         </a>
       </div>
@@ -111,10 +109,10 @@
       <div class="menu-restourant-left-side">
         <h1>Lorem ipsum dolor sit amet consectetur.</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quibusdam pariatur quaerat expedita praesentium error, deleniti quia eveniet distinctio, eos, excepturi fuga aliquam similique ducimus. Facilis mollitia iste id nam.</p>
-        <a href="/" class="menu-restourant-left-side-link-to">Меню</a>
+        <a id="menu-restourant-left-side-link-to" class="menu-restourant-left-side-link-to" data-href="#viewmenu">Меню</a>
       </div>
       <div class="menu-restourant-right-side">
-        <img data-src="image/content/menu-restourant/bg.jpg" alt="" class="menu-restourant-right-side_bg">
+        <img data-href="#viewimg" data-src="image/content/menu-restourant/bg.jpg" alt="" class="menu-restourant-right-side_bg">
       </div>
     </section>
     <!-- end section menu-restourant -->
@@ -122,7 +120,7 @@
     <!-- section menu-review -->
     <section id="menu-review" class="menu-review">
       <div class="menu-review-bg-side">
-          <img data-src="image/content/menu-restourant/bg.jpg" alt="" class="menu-review-right-side_bg">
+          <img data-href="#viewimg" data-src="image/content/menu-restourant/bg.jpg" alt="" class="menu-review-right-side_bg">
       </div>
 
       <div class="menu-review-center-side">
@@ -134,11 +132,11 @@
     <!-- section interior -->
     <section  id="interior" class="interior">
       <div id="interior-right-side" class="interior-right-side">
-        <img data-src="image/content/intro/image.jpg" src="image/content/interior/bg-thumb.jpg" alt="" class="interior-right-side_bg">
-        <img data-src="image/content/interior/bg.jpg" src="image/content/interior/bg-thumb.jpg" alt="" class="interior-right-side_bg">
-        <img data-src="image/content/interior/bg.jpg" src="image/content/interior/bg-thumb.jpg" alt="" class="interior-right-side_bg">
-        <img data-src="image/content/interior/bg.jpg" src="image/content/interior/bg-thumb.jpg" alt="" class="interior-right-side_bg">
-        <img data-src="image/content/interior/bg.jpg" src="image/content/interior/bg-thumb.jpg" alt="" class="interior-right-side_bg">
+        <img data-href="#viewimg" data-src="image/content/intro/image.jpg" src="image/content/interior/bg-thumb.jpg" alt="" class="interior-right-side_bg">
+        <img data-href="#viewimg" data-src="image/content/interior/bg.jpg" src="image/content/interior/bg-thumb.jpg" alt="" class="interior-right-side_bg">
+        <img data-href="#viewimg" data-src="image/content/interior/bg.jpg" src="image/content/interior/bg-thumb.jpg" alt="" class="interior-right-side_bg">
+        <img data-href="#viewimg" data-src="image/content/interior/bg.jpg" src="image/content/interior/bg-thumb.jpg" alt="" class="interior-right-side_bg">
+        <img data-href="#viewimg" data-src="image/content/interior/bg.jpg" src="image/content/interior/bg-thumb.jpg" alt="" class="interior-right-side_bg">
       </div>
       <div class="interior-left-side">
         <h1>Lorem ipsum dolor sit amet consectetur.</h1>
@@ -151,11 +149,11 @@
     <!-- section dishes -->
     <section  id="dishes" class="dishes">
         <div class="dishes-top-side">
-          <img data-src="image/bg.jpg" alt="1" class="dishes-top-side_bg">
-          <img data-src="image/bg.jpg" alt="2" class="dishes-top-side_bg">
-          <img data-src="image/bg.jpg" alt="3" class="dishes-top-side_bg">
-          <img data-src="image/bg.jpg" alt="4" class="dishes-top-side_bg">
-          <img data-src="image/bg.jpg" alt="5" class="dishes-top-side_bg">
+          <img data-href="#viewimg" data-src="image/bg.jpg" alt="1" class="dishes-top-side_bg">
+          <img data-href="#viewimg" data-src="image/bg.jpg" alt="2" class="dishes-top-side_bg">
+          <img data-href="#viewimg" data-src="image/bg.jpg" alt="3" class="dishes-top-side_bg">
+          <img data-href="#viewimg" data-src="image/bg.jpg" alt="4" class="dishes-top-side_bg">
+          <img data-href="#viewimg" data-src="image/bg.jpg" alt="5" class="dishes-top-side_bg">
         </div>
         <div class="dishes-bottom-side">
           <h1>Lorem ipsum dolor sit amet consectetur.</h1>
@@ -245,20 +243,48 @@
       </div>
   </nav>
   <!-- end MENU -->
+  <!-- POPUPMODAL -->
+  <div id="popupmodal" class="popupmodal">
 
-  <!-- <div id="popupModal" class="popupModal">
-    <div class="close-popupModal">
+    <div class="popupmodal-content">
+      <div class="close-popupmodal">
+        <i class="fas fa-times"></i>
+      </div>
+      
+      <p>Для брони стола звоните по номеру <b>+790000000</b></p>
+      <p><b>Наш адрес:</b> г. Москва, Большой Патриарший переулокб д.10</p>
+      
+    </div>
+  </div>
+  <!-- end POPUPMODAL -->
+
+  <!-- VIEWIMG -->
+  <div id="viewimg" class="viewimg">
+
+    <div class="close-viewimg">
       <i class="fas fa-times"></i>
     </div>
 
-    <div class="modal-content">
-      
-      
+    <div class="viewimg-content">
+      <img src="" alt="">
     </div>
-  </div> -->
-  
 
+  </div>
+  <!-- end VIEWIMG -->
 
+  <!-- VIEWMENU -->
+  <div id="viewmenu" class="viewmenu">
+
+    <div class="close-viewmenu">
+      <i class="fas fa-times"></i>
+    </div>
+
+    <div class="viewmenu-content">
+      <img src="" alt="">
+    </div>
+
+  </div>
+    <!-- end VIEWMENU -->
 
 
 

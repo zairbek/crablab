@@ -42,7 +42,7 @@
 
         //console.log(closeBt)
 
-        var href = $(modal).attr('href'),
+        var href = $(modal).attr('data-href'),
             id = $('body').find('#'+settings.modalTarget),
             idConc = '#'+id.attr('id');
             //console.log(idConc);
