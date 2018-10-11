@@ -213,10 +213,19 @@ body{
   }
 
   &-wrapper{
+
     width: 80%;
     text-align: center;
     color: #fff;
     
+    img{
+      width: 200px;
+      height: 200px;
+      display: inline-block;
+      margin-bottom: 20px;
+      outline: 1px solid red;
+    }
+
     h1{
       margin-bottom: 20px;
       font-size: 3em;

@@ -3,7 +3,7 @@ window.addEventListener("load", init)
 function init(){
   stretchBlock(getId("intro"), "1/1");
   stretchBlock(getId("menu-review"), "1/1");
-  
+  $(document).on("touchmove", false);
 
   //  SLIDES =========== 
 
